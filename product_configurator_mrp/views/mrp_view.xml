@@ -23,7 +23,7 @@
                         class="oe_highlight"
                         type="object"
                         string="Reconfigure"
-                        attrs="{'invisible': ['|', ('config_ok','=',False), ('state', '!=', 'draft')]}"
+                        attrs="{'invisible': ['|', ('config_ok','=',False), ('state', '!=', 'confirmed')]}"
                     />
                 </div>
             </xpath>
@@ -66,7 +66,7 @@
     <record id="mrp.mrp_production_action" model="ir.actions.act_window">
         <field
             name="context"
-        >{"search_default_todo": True, "default_company_id": context.get('company_id'), "custom_create_variant": True}</field>
+        >{"search_default_todo": True, "custom_create_variant": True}</field>
     </record>
 
     <record id="mrp_bom_form_view" model="ir.ui.view">

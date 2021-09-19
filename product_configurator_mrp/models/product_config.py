@@ -53,6 +53,7 @@ class ProductConfigSession(models.Model):
         else:
             # If parent BOM is used, then look through Config Sets
             # on parent product's bom to add the products to the bom lines.
+            import pdb; pdb.set_trace()
             for parent_bom_line in parent_bom.bom_line_ids:
                 if parent_bom_line.config_set_id:
                     for config in parent_bom_line.config_set_id.configuration_ids:
